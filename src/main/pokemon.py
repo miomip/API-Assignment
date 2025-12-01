@@ -1,7 +1,9 @@
 import requests
 
 
-def getPokemon(pokemon: str) -> dict | Exception:
+def getPokemon() -> dict | Exception:
+    pokemon = input("Pokemon name: ").lower()
+
     req = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}")
 
     if req.status_code == 200:

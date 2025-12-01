@@ -15,7 +15,4 @@ if __name__ == '__main__':
             print(f"{userInput} is not a valid operation")
             continue
         break
-    if userInput == "pokemon":
-        print(operations[userInput](input("Pokemon name: ").lower()))
-    else:
-        print(operations[userInput]())
+    print(operations[userInput]())
