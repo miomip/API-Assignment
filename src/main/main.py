@@ -9,11 +9,13 @@ operations = {
 }
 
 if __name__ == '__main__':
-    userInput = input().lower()
-    if userInput not in operations:
-        print(f"{userInput} is not a valid operation")
-        exit()
+    while True:
+        userInput = input().lower()
+        if userInput not in operations:
+            print(f"{userInput} is not a valid operation")
+            continue
+        break
     if userInput == "pokemon":
-        operations[userInput](input("Pokemon name: ").lower())
+        print(operations[userInput](input("Pokemon name: ").lower()))
     else:
-        operations[userInput]()
+        print(operations[userInput]())
