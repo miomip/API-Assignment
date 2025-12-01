@@ -1,2 +1,2 @@
 # API-Assignment
-ItSimple, three tasks.
+It's simple, really, three tasks, one assignment.
