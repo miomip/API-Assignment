@@ -1,15 +1,14 @@
 import requests
+from util import getAndCheck
 
 
-def getPokemon() -> dict | Exception:
+def getPokemon() -> str | Exception:
     pokemon = input("Pokemon name: ").lower()
+    url = f"https://pokeapi.co/api/v2/pokemon/{pokemon}"
 
-    req = requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemon}")
+    data = getAndCheck(url)
 
-    if req.status_code == 200:
-        json_data = req.json()
-        print(f"{int(json_data["height"]) / 10} meter")
-        print(f"{int(json_data["weight"]) / 10} kg")
-        return json_data
-    else:
-        return Exception(f"Pokemon {pokemon} not found. Error code: {req.status_code}")
+    height = int(data["height"]) / 10
+    weight = int(data["weight"]) / 10
+
+    return f"Height is {height} meter \nand it weighs {weight} kg"

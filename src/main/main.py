@@ -10,7 +10,7 @@ operations = {
 
 if __name__ == '__main__':
     while True:
-        userInput = input().lower()
+        userInput = input("What do you want to do? ").lower()
         if userInput not in operations:
             print(f"{userInput} is not a valid operation")
             continue

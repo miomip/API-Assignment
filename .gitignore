@@ -7,7 +7,9 @@ __pycache__/
 *.so
 
 #Jetbrains
-.idea
+.idea/
+src/kotlin/amper
+src/kotlin/amper.bat
 
 # Distribution / packaging
 .Python
